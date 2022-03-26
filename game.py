@@ -2,11 +2,13 @@
 import pygame,sys
 from settings import *
 from level import Level
+from pygame.locals import *
 pygame.init()
 clock = pygame.time.Clock()
+pygame.display.set_caption("teraain tries")
 
 
-screen = pygame.display.set_mode((screen_width,screen_height))
+screen = pygame.display.set_mode((screen_width,screen_height),HWSURFACE|DOUBLEBUF|RESIZABLE)
 level = Level(level_map,screen)
 
 while True:
@@ -18,6 +20,8 @@ while True:
             if event.key == pygame.K_ESCAPE:
                 pygame.quit()
                 sys.exit()
+
+
     
     screen.fill('black')
     level.run()
