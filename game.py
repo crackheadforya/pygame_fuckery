@@ -3,16 +3,16 @@ import pygame,sys
 from settings import *
 from level import Level
 from pygame.locals import *
-pygame.init()
+pygame.init() 
 clock = pygame.time.Clock()
-pygame.display.set_caption("teraain tries")
+pygame.display.set_caption("radiance bone-structure")
 
-
-screen = pygame.display.set_mode((screen_width,screen_height),HWSURFACE|DOUBLEBUF|RESIZABLE)
+#line 11 resizer fnc-> HWSURFACE|DOUBLEBUF|RESIZABLE
+screen = pygame.display.set_mode((screen_width,screen_height))
 level = Level(level_map,screen)
 
 while True:
-    for event in pygame.event.get():
+    for event in pygame.event.get():             
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()

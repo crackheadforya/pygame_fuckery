@@ -5,6 +5,7 @@ class Tile(pygame.sprite.Sprite):
         self.image = pygame.Surface((size,size))
         self.image.fill('grey')
         self.rect = self.image.get_rect(topleft=pos)
-    def update(self):
-        self.rect.center = pygame.mouse.get_pos()
+    def update(self,xshift):
+        
+        self.rect.x += xshift
 
